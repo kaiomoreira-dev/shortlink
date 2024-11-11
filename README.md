@@ -17,39 +17,57 @@
 ## Node Version
 * '>=v18 <=v22'
 
-# Cloud Provider
-* Railway: https://shortlink-api.up.railway.app/
-
-## Installation
-```bash
-$ pnpm install
-```
-
 ## Docker
-
+* No diretório raiz, execute o Docker Compose para levantar todos os serviços:
+  
 ```bash
 $ docker compose up -d
 ```
 
-## Migrations
-
+## Dependecy Installation
 ```bash
-# up migrations in database
+$ cd user
+$ npm install
+
+$ cd shortlink
+$ npm install
+```
+
+## Migrations
+```bash
+$ cd user
+$ npx prisma migrate dev
+
+$ cd shortlink
 $ npx prisma migrate dev
 ```
 ## Running the app
 
 ```bash
 # watch mode
-$ pnpm run start:dev
+$ cd user
+$ npm run start:dev
 
+$ cd user
 # production mode
-$ pnpm run start:prod
+$ npm run start:prod
+
+# watch mode
+$ cd shortlink
+$ npm run start:dev
+
+$ cd shortlink
+# production mode
+$ npm run start:prod
 ```
 ## Test
 
 ```bash
 # test units
-$ pnpm run test:unit
+$ cd user
+$ npm run test
+
+$ cd shortlink
+$ npm run test
 ```
 

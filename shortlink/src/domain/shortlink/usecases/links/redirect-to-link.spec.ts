@@ -1,8 +1,8 @@
 import { InMemoryLinksRepository } from 'test/repositories/in-memory-links-repository'
 import { RedirectToLinkUseCase } from './redirect-to-link'
-import { CreateShortLinkUseCase } from './create-shortlink'
 import { MockEnvService } from 'test/env/faker-env'
 import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
+import { CreateShortLinkUseCase } from './create-short-link'
 
 let inMemoryLinksRepository: InMemoryLinksRepository
 let mockEnv: MockEnvService

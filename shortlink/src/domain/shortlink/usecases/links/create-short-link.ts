@@ -1,7 +1,7 @@
 import { UniqueEntityId } from '@/core/entities/unique-entity-id'
-import { LinksRepository } from '@/domain/shortlink/application/repositories/links-repository'
-import { Either, right } from '@/core/types/either'
 import { Link } from '@/domain/shortlink/enterprise/entities/link'
+import { LinksRepository } from '../../application/repositories/links-repository'
+import { Either, right } from '@/core/types/either'
 import { Injectable } from '@nestjs/common'
 
 interface ShortLinkRequest {

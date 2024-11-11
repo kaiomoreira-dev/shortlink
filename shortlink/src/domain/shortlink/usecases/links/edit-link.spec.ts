@@ -1,9 +1,8 @@
 import { InMemoryLinksRepository } from 'test/repositories/in-memory-links-repository'
-import { CreateShortLinkUseCase } from './create-shortlink'
-import { faker } from '@faker-js/faker'
 import { EditShortLinkUseCase } from './edit-link'
 import { ResourceNotFoundError } from '@/core/errors/errors/resource-not-found-error'
 import { makeLink } from 'test/factories/make-link'
+import { CreateShortLinkUseCase } from './create-short-link'
 
 let inMemoryLinksRepository: InMemoryLinksRepository
 let stu: EditShortLinkUseCase
@@ -34,14 +33,14 @@ describe('Edit Short Link', () => {
         newOriginalUrl: 'https://teddy360.com.br/updated',
       })
 
-      // expect(resultUpdated.isRight()).toBeTruthy()
-      // if (resultUpdated.isRight()) {
-      //   expect(resultUpdated.isRight()).toBeTruthy()
-      //   expect(resultUpdated.value.link.originalUrl).toEqual(
-      //     'https://teddy360.com.br/updated',
-      //   )
-      //   expect(resultUpdated.value.link.updatedAt).not.toBeNull()
-      // }
+      expect(resultUpdated.isRight()).toBeTruthy()
+      if (resultUpdated.isRight()) {
+        expect(resultUpdated.isRight()).toBeTruthy()
+        expect(resultUpdated.value.link.originalUrl).toEqual(
+          'https://teddy360.com.br/updated',
+        )
+        expect(resultUpdated.value.link.updatedAt).not.toBeNull()
+      }
     }
   })
 

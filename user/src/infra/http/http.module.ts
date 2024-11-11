@@ -6,10 +6,15 @@ import { RegisterUserController } from '@/infra/http/controllers/users/register-
 import { EnvModule } from '../env/env.module'
 import { AuthenticateUserUsecase } from '@/domain/user/usecases/auth/authenticate-user-usecase'
 import { RegisterUserUsecase } from '@/domain/user/usecases/users/register-user-usecase'
+import { SentryController } from './controllers/sentry.controller'
 
 @Module({
   imports: [DatabaseModule, CryptographyModule, EnvModule],
-  controllers: [AutheticateController, RegisterUserController],
+  controllers: [
+    SentryController,
+    AutheticateController,
+    RegisterUserController,
+  ],
   providers: [AuthenticateUserUsecase, RegisterUserUsecase],
 })
 export class HttpModule {}

@@ -1,5 +1,5 @@
 import { InMemoryLinksRepository } from 'test/repositories/in-memory-links-repository'
-import { CreateShortLinkUseCase } from './create-shortlink'
+import { CreateShortLinkUseCase } from './create-short-link'
 
 let inMemoryLinksRepository: InMemoryLinksRepository
 let stu: CreateShortLinkUseCase

@@ -11,10 +11,12 @@ import { EditShortLinkController } from './controllers/links/edit-link.controlle
 import { EditShortLinkUseCase } from '@/domain/shortlink/usecases/links/edit-link'
 import { EnvModule } from '../env/env.module'
 import { CreateShortLinkUseCase } from '@/domain/shortlink/usecases/links/create-short-link'
+import { SentryController } from './controllers/sentry.controller'
 
 @Module({
   imports: [DatabaseModule, EnvModule],
   controllers: [
+    SentryController,
     CreateShortLinkController,
     FetchLinkController,
     RedirectToLinkController,

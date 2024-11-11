@@ -2,10 +2,10 @@ import { BadRequestException, Body, Controller, Post } from '@nestjs/common'
 import { ZodValidationPipe } from '@/infra/http/pipes/zod-validation-pipe'
 import { z } from 'zod'
 import { HttpLinksPresenter } from '@/infra/http/presenters/http-links-presenter'
-import { CreateShortLinkUseCase } from '@/domain/shortlink/usecases/links/create-short-link'
 import { UserPayload } from '@/infra/auth/jwt-strategy'
 import { CurrentUser } from '@/infra/auth/current-user-decorator'
 import { Public } from '@/infra/auth/public'
+import { CreateShortLinkUseCase } from '@/domain/shortlink/usecases/links/create-short-link'
 
 const createLinkSchema = z.object({
   originalUrl: z.string().url().min(1),

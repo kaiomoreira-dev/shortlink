@@ -1,11 +1,15 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
 import { EnvService } from './env/env.service'
+import { connectToSentry } from '../../../user/src/infra/monitoring/sentry/sentry'
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule)
 
   const configService = app.get(EnvService)
+
+  // Configura o Sentry
+  connectToSentry(configService.get('SENTRY_DNS'))
 
   // Habilita o CORS com configurações
   app.enableCors({

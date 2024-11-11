@@ -1,8 +1,8 @@
 import { InMemoryLinksRepository } from 'test/repositories/in-memory-links-repository'
-import { CreateShortLinkUseCase } from './create-shortlink'
 import { DeleteShortLinkUseCase } from './delete-link'
 import { faker } from '@faker-js/faker'
 import { ResourceNotFoundError } from '../../../../core/errors/errors/resource-not-found-error'
+import { CreateShortLinkUseCase } from './create-short-link'
 
 let inMemoryLinksRepository: InMemoryLinksRepository
 let stu: DeleteShortLinkUseCase
